@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """HTTP 请求统一封装"""
 import requests
 from .config_util import  read_ini_config
