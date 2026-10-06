@@ -1,5 +1,4 @@
-# -*- coding: utf-8 -*-
-"""假数据生成工具，用于接口入参随机化，避免硬编码脏数据。"""
+"""假数据生成工具，用于接口入参随机化，避免硬编码脏数据"""
 import random
 import string
 import uuid
