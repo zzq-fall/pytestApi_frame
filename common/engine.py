@@ -1,6 +1,5 @@
-# -*- coding: utf-8 -*-
 """
-YAML 用例驱动引擎（业务层核心）。
+YAML 用例驱动引擎（业务层核心）
 支持：
 1. 数据驱动：读取 data/*.yaml 中用例，循环执行，0 代码新增用例
 2. 参数关联：响应字段 jsonpath 提取存入变量，请求中用 ${变量} 引用
@@ -83,7 +82,7 @@ def _do_assert(resp, expected: dict):
 
 def run_case(case: dict):
     """
-    执行单条 yaml 用例。
+    执行单条 yaml 用例
     """
     request_util = RequestUtil()
     req = case.get("request", {})
