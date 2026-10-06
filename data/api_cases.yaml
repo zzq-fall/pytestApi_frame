@@ -1,0 +1,50 @@
+cases:
+  login_and_list:
+    name: 登录获取token并查询用户列表
+    request:
+      method: POST
+      url: '/post'
+      json:
+        username: 'admin'
+        password: '123456'
+    extract:
+      token: '$.json.username'
+    expected:
+      status_code: 200
+      jsonpath:
+        "$.json.username": "admin"
+
+  create_user:
+    name: 创建新用户（参数关联+假数据）
+    request:
+      method: POST
+      url: '/post'
+      headers:
+        Authorization: 'Bearer ${token}'
+      json:
+        name: '${__random_name}'
+        email: '${__random_email}'
+    extract:
+      new_user_id: '$.json.name'
+    expected:
+      status_code: 200
+      jsonpath:
+        "$.json.username": "admin"
+
+  query_user_list:
+    name: 查询用户列表
+    request:
+      method: GET
+      url: '/get'
+      params:
+        page: 1
+    expected:
+      status_code: 200
+
+  query_new_user:
+    name: 查询刚创建的用户（接口参数关联）
+    request:
+      method: GET
+      url: '/get'
+    expected:
+      status_code: 200
