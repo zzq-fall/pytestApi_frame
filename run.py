@@ -1,11 +1,3 @@
-"""
-项目执行入口：
-    1. 启动本地 mock 服务器（可选）
-    2. 运行 pytest用例，生成 allure 原始结果
-用法：
-    python run.py            #仅执行用例+生成 allure 数据
-    python run.py --mock     #先启动 mock 服务器再执行
-"""
 import os
 import subprocess
 import sys
